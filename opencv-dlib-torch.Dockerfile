@@ -25,9 +25,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash -e
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
-RUN cd ~/torch && ./install.sh && \
+RUN cd ~/torch && bash install-deps && ./install.sh && \
     cd install/bin && \
     ./luarocks install nn && \
     ./luarocks install dpnn && \
