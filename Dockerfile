@@ -1,5 +1,5 @@
-FROM bamos/ubuntu-opencv-dlib-torch:ubuntu_14.04-opencv_2.4.11-dlib_19.0-torch_2016.07.12
-MAINTAINER Brandon Amos <brandon.amos.cs@gmail.com>
+FROM gavrisco/rpi-opencv-dlib-torch:latest
+MAINTAINER Alex Gavrisco <alexandr@gavrisco.com>
 
 # TODO: Should be added to opencv-dlib-torch image.
 RUN ln -s /root/torch/install/bin/* /usr/local/bin
