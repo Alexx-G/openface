@@ -1,6 +1,8 @@
 FROM gavrisco/rpi-opencv-dlib-torch:latest
 MAINTAINER Alex Gavrisco <alexandr@gavrisco.com>
 
+RUN ["cross-build-start"]
+
 # TODO: Should be added to opencv-dlib-torch image.
 RUN ln -s /root/torch/install/bin/* /usr/local/bin
 
@@ -26,6 +28,9 @@ RUN cd ~/openface && \
     python2 setup.py install && \
     pip2 install -r demos/web/requirements.txt && \
     pip2 install -r training/requirements.txt
+
+
+RUN ["cross-build-end"]
 
 EXPOSE 8000 9000
 CMD /bin/bash -l -c '/root/openface/demos/web/start-servers.sh'
