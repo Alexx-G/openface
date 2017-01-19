@@ -17,5 +17,5 @@ wget -nv http://openface-models.storage.cmusatyalab.org/nn4.small2.v1.ascii.t7.x
   -O nn4.small2.v1.ascii.t7.xz
 [ $? -eq 0 ] || ( rm nn4.small2.v1.t7.xz* && die "+ nn4.small2.v1.ascii.t7.xz: Error in wget." )
 unxz nn4.small2.v1.ascii.t7.xz && \
-./convert-ascii-model.lua nv4.small2.v1.ascii.t7 nv4.small nv4.small2.v1.t7 && \
-rm nv4.small2.v1.ascii.t7
+./convert-ascii-model.lua nn4.small2.v1.ascii.t7 nn4.small2.v1.t7 && \
+rm nn4.small2.v1.ascii.t7
