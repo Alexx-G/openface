@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
 
 ADD . /root/openface
 RUN cd ~/openface && \
+    ./models/get-ascii-models.sh && \
     ./models/get-models.sh && \
     pip2 install -r requirements.txt && \
     python2 setup.py install && \
